@@ -1,9 +1,10 @@
 package org.bakeneko.collections
 
+import org.bakeneko.collections.CompactListIntLoader.findClass
+import org.bakeneko.collections.CompactListIntLoader.loadCompactList
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Label
 import org.objectweb.asm.Opcodes
-import java.lang.IllegalArgumentException
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicReference
 import java.util.concurrent.locks.ReentrantLock
