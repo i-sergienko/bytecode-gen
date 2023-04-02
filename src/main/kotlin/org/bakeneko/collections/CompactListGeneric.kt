@@ -1,7 +1,7 @@
 package org.bakeneko.collections
 
 /**
- * A generic ordered collection of elements that supports adding elements.
+ * A generic ordered collection of elements that supports adding and retrieving elements.
  * @param T the type of elements contained in the list. The compact list is invariant in its element type.
  */
 class CompactListGeneric<T>(initialCapacity: Int = 16) : CompactList<T> {
