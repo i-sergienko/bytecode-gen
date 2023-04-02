@@ -1,12 +1,6 @@
 package org.bakeneko.collections
 
-import org.objectweb.asm.ClassWriter
-import org.objectweb.asm.Label
-import org.objectweb.asm.Opcodes
 import java.lang.reflect.InvocationTargetException
-import java.util.concurrent.atomic.AtomicBoolean
-import java.util.concurrent.atomic.AtomicReference
-import java.util.concurrent.locks.ReentrantLock
 
 /**
  * [CompactList] is an ordered collection of elements of the same type [T].
