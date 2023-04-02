@@ -52,7 +52,7 @@ object CompactListIntLoader : ClassLoader() {
 /**
  * [generateCompactListInt] generates the byte code of an implementation of [CompactList], which is a dynamic
  * array storing primitive [Int] values.
- * The generated implementation is (~4 times) more compact than a [CompactListGeneric] that stores [Int] values, since
+ * The generated implementation is more compact than a [CompactListGeneric] that stores [Int] values, since
  * the [Int]s are not stored in boxed form.
  * */
 private fun generateCompactListInt(): ByteArray {
