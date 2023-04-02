@@ -41,4 +41,11 @@ class CompactListIntTest {
         assertEquals(0, subject.get(0))
         assertEquals(1, subject.get(1))
     }
+
+    @Test
+    fun `ensure CompactListIntLoader can be called multiple times`() {
+        // no exceptions after multiple invocations
+        CompactListIntLoader.loadCompactList()
+        CompactListIntLoader.loadCompactList()
+    }
 }

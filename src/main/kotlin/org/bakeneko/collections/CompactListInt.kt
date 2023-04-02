@@ -3,12 +3,15 @@ package org.bakeneko.collections
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Label
 import org.objectweb.asm.Opcodes
+import java.lang.IllegalArgumentException
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicReference
 import java.util.concurrent.locks.ReentrantLock
 
 /**
  * [CompactListIntLoader] overrides the [findClass] method to load the generated [CompactList] implementation.
+ *
+ * To get the generated [CompactListInt] class, use the [loadCompactList] method.
  * */
 object CompactListIntLoader : ClassLoader() {
     private const val expectedName = "org.bakeneko.collections.CompactListInt"
@@ -25,7 +28,11 @@ object CompactListIntLoader : ClassLoader() {
     }
 
     override fun findClass(name: String?): Class<*> {
-        if (!classGenerated.get() && name == expectedName) {
+        if (name != expectedName) {
+            throw IllegalArgumentException("CompactListIntLoader only supports loading org.bakeneko.collections.CompactListInt")
+        }
+
+        if (!classGenerated.get()) {
             loaderLock.lock()
             try {
                 if (!classGenerated.get()) {

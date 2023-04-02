@@ -36,6 +36,9 @@ class CompactListGeneric<T>(initialCapacity: Int = 16) : CompactList<T> {
         return elements[index] as T
     }
 
+    /**
+     * [growArray] doubles the size of the underlying [elements] array, provided it is possible to do so.
+     * */
     private fun growArray() {
         if (elements.size == Int.MAX_VALUE) {
             throw IllegalStateException("CompactList reached its maximum size and cannot grow any more.")
